@@ -1,0 +1,58 @@
+{
+	"name": "electron-sveltekit-tailwind",
+	"productName": "Electron-Sveltekit-Tailwind",
+	"version": "1.0.0",
+	"description": "Electron app built using SvelteKit and styled with Tailwind",
+	"keywords": [],
+	"repository": "",
+	"homepage": "",
+	"bugs": "",
+	"author": {
+		"email": "",
+		"name": ""
+	},
+	"license": "MIT",
+	"private": true,
+	"main": "electron/main.cjs",
+	"type": "module",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=dev npm run dev:all",
+		"dev:all": "concurrently -p \"[{time}] [{name}]\" -t \"HH:mm:ss\" -n svelte,electron -c #FD6937,#07B6D5 -s all \"npm run dev:svelte\" \"wait-on http://localhost:3000 && electron .\"",
+		"dev:svelte": "vite dev --host --port 3000",
+		"build": "cross-env NODE_ENV=production npm run build:svelte && npm run build:electron",
+		"build:svelte": "vite build",
+		"build:electron": "electron-builder build --win --publish never",
+		"deploy": "cross-env NODE_ENV=production npm run build:svelte && npm run deploy:electron",
+		"deploy:electron": "electron-builder build --win --publish always",
+		"postinstall": "svelte-kit sync"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
+		"autoprefixer": "^10.4.8",
+		"concurrently": "^7.3.0",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.1",
+		"electron": "^20.0.3",
+		"electron-builder": "^23.3.3",
+		"electron-updater": "^5.2.1",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.16",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte": "^3.44.0",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.8",
+		"vite": "^3.0.4",
+		"wait-on": "^6.0.1"
+	},
+	"dependencies": {
+		"electron-context-menu": "^3.5.0",
+		"electron-serve": "^1.1.0",
+		"electron-store": "^8.1.0",
+		"electron-window-state": "^5.0.3"
+	}
+}

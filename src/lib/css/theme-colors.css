@@ -1,0 +1,19 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Background Colors */
+        --primary-bg: #192127;
+        --secondary-bg: #293640;
+        /* Font Colors */
+        --primary-font: #F2F3F5;
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Background Colors */
+        --primary-bg: #FFF;
+        --secondary-bg: #F2F3F5;
+        /* Font Colors */
+        --primary-font: #4A4A55;
+    }
+}

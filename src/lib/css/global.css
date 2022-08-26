@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HTML, Bosy, app, main, page */
+html, body, #app{
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: var(--primary-bg);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+#page {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--secondary-bg);
+    border-top-left-radius: 8px;
+}
+
+/* Tags */
+span,
+p,
+a,
+label,
+h1, h2, h3, h4, h5, h6 {
+    user-select: none;
+}
+
+h1 {
+    color: #FF3E00;
+}
+
+h2 {
+    color: var(--primary-font);
+}
+
+button {
+    border: none;
+    outline: none;
+    user-select: none;
+    transition: 0.15s ease-in-out;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid #FF3E00;
+    border: none;
+}
+
+img {
+    width: auto;
+    height: 100%;
+}
+
+svg, img {
+    pointer-events: none;
+}
+
+/* Titlebar */
+#titlebar {
+    -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    height: 30px;
+    color: var(--primary-font);
+    background-color: var(--primary-bg);
+}
+
+.window-btns {
+	display: flex;
+	justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    -webkit-app-region: none;
+}
+
+.window-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    height: 100%;
+    width: 46px;
+}
+
+.window-btn:hover {
+    background-color: #FFFFFF26;
+}
+
+/* Sidebar */
+#sidebar {
+    padding: 0 15px;
+    width: 150px;
+    color: var(--primary-font);
+    background-color: var(--primary-bg);
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-content header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.sidebar-content header span {
+    color: var(--primary-font);
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.carousel button {
+    height: 25px;
+    width: 25px;
+    color: #F2F3F5;
+    background-color: #FF3E00;
+    border-radius: 50%;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 25px;
+    width: 70px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carousel-item span {
+    position: absolute;
+    text-align: center;
+}
+
+/* Hero */
+#hero {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img img {
+    position: absolute;
+    top: 0;
+    height: 200px;
+}
+
+.hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    color: var(--primary-font);
+    text-align: center;
+}
+
+.hero-title span {
+    position: absolute;
+}
+
+/* Buttons */
+.link-btn {
+    padding: 6px 35px;
+    height: max-content;
+    min-width: 50px;
+    color: #F2F3F5;
+    background-color: #FF3E00;
+    border-radius: 8px;
+    text-align: center;
+}
